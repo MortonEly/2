@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>学生编号:{{stu.stuNo}}</p>
+			<p>学生姓名:{{stu.stuName}}</p>
+			<p>学生性别:
+				<label v-if="stu.stuGender=='M'">男</label>
+				<label v-else>女</label>
+			</p>
+			<p>学生年龄:{{stu.stuAge}}</p>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					stu:{
+						stuNo:"001",
+						stuName:"fanfan",
+						stuGender:"F",
+						stuAge:30
+					}
+				},
+				methods:{}
+			})
+		</script>
+	</body>
+</html>

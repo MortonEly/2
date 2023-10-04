@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>v-else-if</title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="age">
+			<label v-if="age>=18 && age<=60">杰杰喜欢</label>
+			<label v-else-if="age<18 && age>6">凡凡喜欢</label>
+			<label v-else>峰峰喜欢</label>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					age:0
+				},
+				methods:{}
+			})
+		</script>
+	</body>
+</html>

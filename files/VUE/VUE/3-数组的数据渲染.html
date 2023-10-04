@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组的数据渲染</title>
+		<script src="./js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{cites[0]}}</p>
+			<p>{{cites[1]}}</p>
+			<p>{{cites[2]}}</p>
+			<p>{{cites[3]}}</p>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					cites:["武汉","长沙","成都","重庆"]
+				}
+			})
+		</script>
+	</body>
+</html>
