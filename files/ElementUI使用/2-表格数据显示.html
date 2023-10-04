@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>表格数据显示</title>
+	<script src="./js/vue.js"></script>
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<!-- 引入组件库 -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<!-- 引入axios -->
+	<script src="./js/axios.min.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<el-table :data="tableData" style="width: 100%">
+			<el-table-column prop="bookId" label="书籍编号" width="180">
+			</el-table-column>
+			<el-table-column prop="bookName" label="书名" width="180">
+			</el-table-column>
+			<el-table-column prop="bookAuthor" label="作者">
+			</el-table-column>
+			<el-table-column prop="bookPrice" label="价格">
+			</el-table-column>
+			<el-table-column prop="bookPrice" label="价格">
+			</el-table-column>
+		</el-table>
+	</div>
+	<script>
+		new Vue({
+			el: "#app",
+			data: {
+				tableData: [],
+			},
+			methods: {
+				// 跨域问题:
+				show: function () {
+					//访问http://localhost:9999/book/list
+					//axios 
+					axios.post("http://localhost:9999/book/list").then((res) => {
+						this.tableData = res.data;
+					})
+				},
+			},
+			created: function () {
+				//声明周期函数，数据自动加载
+				this.show();
+			}
+		})
+	</script>
+</body>
+
+</html>
